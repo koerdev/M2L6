@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet - Login</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">Iniciar sesión</h2>
+        <form>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Ingrese su email">
+            </div>
+            <div class="form-group top-space">
+                <label for="password">Contraseña:</label>
+                <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña">
+            </div>
+            <p id="errorMessage" class="text-danger"></p>
+            <button type="submit" id="btnLogin" class="btn btn-primary top-space">Ingresar</button>
+        </form>
+        <a href="./pages/menu.html" class="btn btn-secondary top-space">Ir al Menú Principal</a>
+    </div>
+
+    <script src="./js/login.js"></script>
+</body>
+</html>
