@@ -3,8 +3,10 @@ let btnSendMoney = document.getElementById("btnSendMoney")
 let btnTransactions = document.getElementById("btnTransactions")
 
 let depositAmount = document.getElementById("depositAmount")
-let totalMoney = document.getElementById("totalMoney")
+// let totalMoney = document.getElementById("totalMoney")
+let totalMoney = $('#totalMoney')
 let btnDepositMoney = document.getElementById("btnDepositMoney")
+let alertContainer = $('#alertContainer')
 
 let btnAddContact = document.getElementById("btnAddContact")
 let contactList = document.getElementById("contactList")
@@ -65,7 +67,15 @@ if(btnDepositMoney) {
         localStorage.setItem("transactions", JSON.stringify(transactions))
 
         depositAmount.value = ""
-        alert("Dinero depositado")
+
+        // Se crea la leyenda de bootstrap de forma dinámica
+        $('#alertContainer').text(`Se ha depositado ${amount} en la cuenta.`)
+        $('#alertContainer').removeClass("d-none")
+
+        // Se redirige después de 2 seg
+        setTimeout(function() {
+            window.location.href = 'menu.html'
+        }, 2000)
     })
 }
 
@@ -75,8 +85,11 @@ if(totalMoney) {
     if(storedTotal === null) {
         let initialTotal = 60000
         localStorage.setItem("totalMoney", initialTotal)
+        totalMoney.text(initialTotal)
     } else {
-        totalMoney.innerText = storedTotal
+        // se cambia a jquery
+        // totalMoney.innerText = storedTotal
+        totalMoney.text(storedTotal)
     }
 }
 
